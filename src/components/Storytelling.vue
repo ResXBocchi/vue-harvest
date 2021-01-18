@@ -20,7 +20,6 @@
 export default {
   name: "Storytelling"
 };
-//      if (Array.from(data.get('trees')).slice().filter((element) => element !== ',').map((element)=>Number(element))){
 </script>
 
 <style>
