@@ -7,7 +7,6 @@
     <label for="carla">Trees to be harvested by Carla</label><br />
     <input id="carla" placeholder="Integer value" name="carla" /><br /><br />
     <input class="submit" type="submit" value="" />
-    <p>"{{ A }}"</p>
   </form>
 </template>
 
@@ -52,6 +51,7 @@ export default {
               this.A = json["biggest_amount"];
               this.K = json["K_harvest"];
               this.L = json["L_harvest"];
+              this.$router.push('/results')
             });
         }
       } catch (err) {
