@@ -28,22 +28,22 @@ export default {
     handleSubmit(event) {
       event.preventDefault();
       const input = new FormData(event.target);
-      const json = {
+      const initialjson = {
         A: `[${input.get("trees")}]`,
         K: input.get("marcelo"),
         L: input.get("carla")
       };
       try {
         if (
-          typeof JSON.parse(json.A) === "object" &&
-          typeof JSON.parse(json.K) === "number" &&
-          typeof JSON.parse(json.L) === "number"
+          typeof JSON.parse(initialjson.A) === "object" &&
+          typeof JSON.parse(initialjson.K) === "number" &&
+          typeof JSON.parse(initialjson.L) === "number"
         ) {
           fetch(
             "https://vsoxvkex5m.execute-api.sa-east-1.amazonaws.com/dev/harvest-data",
             {
               method: "POST",
-              body: JSON.stringify(json)
+              body: JSON.stringify(initialjson)
             }
           )
             .then(response => response.json())
@@ -51,7 +51,8 @@ export default {
               const A = json["biggest_amount"];
               const K = json["K_harvest"];
               const L = json["L_harvest"];
-              this.$router.push({ name: "Output", params: { A, K, L } });
+              const Trees = JSON.parse(initialjson.A)
+              this.$router.push({ name: "Output", params: { A, K, L, Trees } });
             });
         }
       } catch (err) {
