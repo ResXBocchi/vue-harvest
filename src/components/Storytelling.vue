@@ -10,8 +10,9 @@
     to help the villagers to know exactly which would be the best harvest.
   </h1>
   <h1 class="storytellingRed">
-    The good news is that we managed to replicate a humble version of the gadget,
-    which you can try right now! Insert the data below and watch the magic.
+    The good news is that we managed to replicate a humble version of the
+    gadget, which you can try right now! Insert the data below and watch the
+    magic.
   </h1>
 </template>
 

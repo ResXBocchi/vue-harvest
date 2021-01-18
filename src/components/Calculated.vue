@@ -13,24 +13,24 @@
     </h1>
   </div>
   <div>
-    <p class="k-amount" v-if="K.length + L.length < Trees.length">
+    <p class="marcelo-amount" v-if="K.length + L.length < Trees.length">
       Harvested by Marcelo:
       {{ K.map(e => Trees[e]).reduce((a, b) => Number(a) + Number(b)) }}
     </p>
-    <p class="l-amount" v-if="K.length + L.length < Trees.length">
+    <p class="carla-amount" v-if="K.length + L.length < Trees.length">
       Harvested by Carla:
       {{ L.map(e => Trees[e]).reduce((a, b) => Number(a) + Number(b)) }}
     </p>
   </div>
   <ul class="ul">
-    <li v-for="tree in TreesIndex" v-bind:key="tree" class="trees">
+    <li v-for="tree in TreesIndex" v-bind:key="tree" class="tree">
       <div>
-        <p v-if="K.includes(tree)" class="amount" id="k">{{ Trees[tree] }}</p>
-        <p v-else-if="L.includes(tree)" class="amount" id="l">
+        <p v-if="K.includes(tree)" class="amount" id="marcelo-trees">{{ Trees[tree] }}</p>
+        <p v-else-if="L.includes(tree)" class="amount" id="carla-trees">
           {{ Trees[tree] }}
         </p>
         <p v-else class="amount">{{ Trees[tree] }}</p>
-        <img class="appletree" alt="appletree" src="../assets/appletree.png" />
+        <img class="tree-img" alt="Apple Tree" src="../assets/appletree.png" />
         <p class="index">{{ Number(tree) + 1 }}</p>
       </div>
     </li>
@@ -54,10 +54,10 @@ export default {
 };
 </script>
 <style>
-.appletree {
+.tree-img {
   max-width: 100px;
 }
-.trees {
+.tree {
   flex-direction: row;
   list-style-type: none;
   display: inline-block;
@@ -82,19 +82,19 @@ export default {
   margin-inline-start: 34px;
   font-weight: bold;
 }
-.k-amount {
+.marcelo-amount {
   color: #ff0000;
   font-weight: bold;
 }
-.l-amount {
+.carla-amount {
   color: rgb(88, 85, 238);
   font-weight: bold;
 }
-#k {
+#marcelo-trees {
   color: #ff0000 !important;
   background-color: #ffd89f;
 }
-#l {
+#carla-trees {
   color: rgb(88, 85, 238) !important;
   background-color: #ffd89f;
 }

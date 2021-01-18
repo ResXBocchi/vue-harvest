@@ -8,7 +8,7 @@ import Calculated from "@/components/Calculated.vue";
 export default {
   name: "Output",
   components: {
-      Calculated
+    Calculated
   }
 };
 </script>

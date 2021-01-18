@@ -42,10 +42,9 @@ export default {
           fetch(
             "https://vsoxvkex5m.execute-api.sa-east-1.amazonaws.com/dev/harvest-data",
             {
-              headers: {"Authorization" : "p1a2s3s4w5o6r7d"},
+              headers: { Authorization: "MISSING_AUTH" },
               method: "POST",
-              body: JSON.stringify(initialjson),
-              
+              body: JSON.stringify(initialjson)
             }
           )
             .then(response => response.json())
@@ -53,9 +52,12 @@ export default {
               const A = json["biggest_amount"];
               const K = json["K_harvest"];
               const L = json["L_harvest"];
-              const Trees = JSON.parse(initialjson.A)
-              const TreesIndex = [...Array(Trees.length).keys()]
-              this.$router.push({ name: "Output", params: { Trees, TreesIndex, A, K, L } });
+              const Trees = JSON.parse(initialjson.A);
+              const TreesIndex = [...Array(Trees.length).keys()];
+              this.$router.push({
+                name: "Output",
+                params: { Trees, TreesIndex, A, K, L }
+              });
             });
         }
       } catch (err) {
