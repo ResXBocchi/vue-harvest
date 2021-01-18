@@ -3,14 +3,14 @@
   <img class="harvesters" alt="people harvesting" src="../assets/harvest.jpg" />
   <h1 class="storytellingRed">
     Once upon a time, in the feudal age, it was really though for the villagers
-    to know what was the best apple trees to be harvested.
+    to know what was the best Apple Trees to be harvested.
   </h1>
   <h1 class="storytellingBrown">
     However, a Time Traveller, aware of the situation, decided to build a gadget
     to help the villagers to know exactly which would be the best harvest.
   </h1>
   <h1 class="storytellingRed">
-    The good new is that we managed to replicate a humble version of the gadget,
+    The good news is that we managed to replicate a humble version of the gadget,
     which you can try right now! Insert the data below and watch the magic.
   </h1>
 </template>

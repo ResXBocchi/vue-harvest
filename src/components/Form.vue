@@ -42,7 +42,7 @@ export default {
           fetch(
             "https://vsoxvkex5m.execute-api.sa-east-1.amazonaws.com/dev/harvest-data",
             {
-              headers: {"Authorization" : "MISSING AUTH"},
+              headers: {"Authorization" : "p1a2s3s4w5o6r7d"},
               method: "POST",
               body: JSON.stringify(initialjson),
               
