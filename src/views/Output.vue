@@ -1,6 +1,6 @@
 <template>
-  <div class="results">
-    <h1>This is an results page</h1>
+  <div class="output">
+    <h1>This is an results page '{{ A }}' / '{{ K }}' / '{{ L }}'</h1>
   </div>
 </template>
 <script>
@@ -8,8 +8,11 @@
 
 export default {
   name: "Output",
-  components: {
-    
-  }
+  props: {
+    A: Object,
+    K: Object,
+    L: Object
+  },
+  components: {}
 };
 </script>

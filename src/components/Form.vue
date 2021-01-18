@@ -48,10 +48,10 @@ export default {
           )
             .then(response => response.json())
             .then(json => {
-              this.A = json["biggest_amount"];
-              this.K = json["K_harvest"];
-              this.L = json["L_harvest"];
-              this.$router.push('/results')
+              const A = json["biggest_amount"];
+              const K = json["K_harvest"];
+              const L = json["L_harvest"];
+              this.$router.push({ name: "Output", params: { A, K, L } });
             });
         }
       } catch (err) {
