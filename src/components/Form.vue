@@ -1,7 +1,7 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <label for="trees">List of apples in trees:</label><br />
-    <input id="trees" placeholder="Separate with commas" name="trees" /><br />
+    <input id="trees" placeholder="Separated by commas" name="trees" /><br />
     <label for="marcelo">Trees to be harvested by Marcelo</label><br />
     <input id="marcelo" placeholder="Integer value" name="marcelo" /><br />
     <label for="carla">Trees to be harvested by Carla</label><br />
@@ -42,6 +42,7 @@ export default {
           fetch(
             "https://vsoxvkex5m.execute-api.sa-east-1.amazonaws.com/dev/harvest-data",
             {
+              headers: { Authorization: "" },
               method: "POST",
               body: JSON.stringify(initialjson)
             }
@@ -51,8 +52,12 @@ export default {
               const A = json["biggest_amount"];
               const K = json["K_harvest"];
               const L = json["L_harvest"];
-              const Trees = JSON.parse(initialjson.A)
-              this.$router.push({ name: "Output", params: { A, K, L, Trees } });
+              const Trees = JSON.parse(initialjson.A);
+              const TreesIndex = [...Array(Trees.length).keys()];
+              this.$router.push({
+                name: "Output",
+                params: { Trees, TreesIndex, A, K, L }
+              });
             });
         }
       } catch (err) {
