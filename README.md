@@ -15,7 +15,7 @@ The Python function and all instructions for testing are available at https://gi
 
 After fetching the response from the Python function, the front-end works with the data to display the total and individual amount harvested, the trees aligned horizontaly, with their numbers (indexes + 1) below and their values above. The value's circle of the tree either is red for those which has been harvested by Marcelo, blue for Carla's trees and dark grey for those which will be harvest another day (or eaten by the birds!).
 
-The messages on the output view are conditional rendered. Try out some crazy values and you will be advised.
+The messages on the output view are conditionally rendered. Try out some crazy values and you will be advised.
 
 To keep the things interesting the application is contextualized in the Feudal Age, and the user is awarded with a driving, Oscar-Deserving storytelling.
 
