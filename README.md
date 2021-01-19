@@ -11,7 +11,7 @@ The function evaluates all possibilitys of disjoint segments and returns the mos
 
 To invoke the function, the Vue front-end app validates the form inputs and calls the API Gateway's endpoint responsable to comunicate with the Lambda AWS service to access the Python function and the custom authentication function.
 
-All functions (algorithm, form validation and auth validation) are available to see and test inside the functions folder of this repository.
+The Python function and all instructions for testing are available at https://github.com/ResXBocchi/epic-algorithm
 
 After fetching the response from the Python function, the front-end works with the data to display the total and individual amount harvested, the trees aligned horizontaly, with their numbers (indexes + 1) below and their values above. The value's circle of the tree either is red for those which has been harvested by Marcelo, blue for Carla's trees and dark grey for those which will be harvest another day (or eaten by the birds!).
 
