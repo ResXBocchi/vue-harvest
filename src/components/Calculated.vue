@@ -13,11 +13,11 @@
     </h1>
   </div>
   <div>
-    <p class="marcelo-amount" v-if="K.length + L.length < Trees.length">
+    <p class="marcelo-amount" v-if="K.length + L.length <= Trees.length">
       Harvested by Marcelo:
       {{ K.map(e => Trees[e]).reduce((a, b) => Number(a) + Number(b)) }}
     </p>
-    <p class="carla-amount" v-if="K.length + L.length < Trees.length">
+    <p class="carla-amount" v-if="K.length + L.length <= Trees.length">
       Harvested by Carla:
       {{ L.map(e => Trees[e]).reduce((a, b) => Number(a) + Number(b)) }}
     </p>
@@ -78,9 +78,11 @@ export default {
 .amount {
   border-style: solid;
   border-radius: 40px;
-  max-width: 20px;
-  margin-inline-start: 34px;
+  width:45px;
+  height: 30px;
+  margin-inline-start: 22px;
   font-weight: bold;
+  padding-top:15px
 }
 .marcelo-amount {
   color: #ff0000;
@@ -105,6 +107,15 @@ export default {
   margin: 40px;
   border-radius: 10px;
   outline: none;
+  height:30px;
+  width:100px;
+  font-size:70%;
+}
+.back:hover{
+  background-color: #fcf3e7;
+  height:35px;
+  width:105px;
+  margin:37px;
 }
 .index {
   font-size: 12px;

@@ -28,6 +28,21 @@ export default {
     handleSubmit(event) {
       event.preventDefault();
       const input = new FormData(event.target);
+      if (input.get("trees").includes('-')){
+        alert('No negative numbers, please! What kind of tree gives negative fruits?')
+        event.target.reset()
+        return null
+      }
+      if (input.get("marcelo").includes('-')){
+        alert('No negative numbers, please! Does Marcelo want to plant some trees?')
+        event.target.reset()
+        return null
+      }
+      if (input.get("carla").includes('-')){
+        alert('No negative numbers, please! Does Carla want to plant some trees?')
+        event.target.reset()
+        return null
+      }
       const initialjson = {
         A: `[${input.get("trees")}]`,
         K: input.get("marcelo"),
@@ -85,6 +100,7 @@ input::placeholder {
 button {
   cursor: pointer;
 }
+
 img.button_image {
   max-height: 30px;
 }
@@ -98,5 +114,11 @@ img.button_image {
   border-radius: 40px;
   cursor: pointer;
   outline: none;
+}
+.submit:hover {
+  background-color: #fcf3e7;
+  height: 45px;
+  width: 45px;
+  margin-top:-3px;
 }
 </style>
